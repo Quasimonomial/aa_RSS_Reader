@@ -4,7 +4,6 @@ window.NewsReader = {
   Views: {},
   Routers: {},
   initialize: function() {
-    console.log('Hello from Backbone!');
     new NewsReader.Routers.Router({rootEl: "#feedContent"});
 
     Backbone.history.start();

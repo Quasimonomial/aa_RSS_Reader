@@ -14,8 +14,7 @@ NewsReader.Routers.Router = Backbone.Router.extend({
       collection: feeds
     });
 
-    indexView.render();
-    this.$rootEl.html(indexView.$el)
+    this.$rootEl.html(indexView.render().$el)
   }
 
 

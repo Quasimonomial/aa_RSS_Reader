@@ -6,7 +6,7 @@ NewsReader.Views.FeedIndex = Backbone.View.extend({
 
   template: JST["feedIndex"],
 
-  render: function(){
+  render: function() {
     console.log("rendering Feed view");
     var content = this.template({feeds: this.collection});
     this.$el.html(content);
