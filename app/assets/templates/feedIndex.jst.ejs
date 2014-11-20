@@ -1,3 +1,11 @@
 <h1>News Reader</h1>
 
-<p>It reads news so you don't have to'</p>
+<p>It reads news so you don't have to</p>
+
+<ul>
+  <% feeds.each(function(feed){ %>
+    <li>
+      <%= feed.escape("title")%>
+    </li>
+  <% }); %>
+</ul>
