@@ -671,3 +671,512 @@ Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 20 Nov 2014 19:51:21 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416512990"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T19:49:50+00:00\",\"link\":\"http://example.com/test/1416512990\",\"description\":\"Elit dolore id ipsum ad ea anim ex sit eiusmod.\",\"pubDate\":\"2014-11-20T11:49:50-08:00\",\"guid\":\"http://example.com/test/1416512990\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416512990"], ["published_at", Thu, 20 Nov 2014 19:49:50 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T19:49:50+00:00"], ["updated_at", Thu, 20 Nov 2014 19:51:21 UTC +00:00]]
   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2014-11-20 11:55:54 -0800
+
+SyntaxError - /Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected ',', expecting =>
+    render :json => {Feed.find(params[:id]), include: :latest_entries}
+                                            ^
+/Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:24: syntax error, unexpected end-of-input, expecting keyword_end:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4454382140791653443__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70334206741520/variables" for 127.0.0.1 at 2014-11-20 11:55:54 -0800
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2014-11-20 11:56:15 -0800
+
+SyntaxError - /Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected ':', expecting =>
+    render :json => {Feed.find(params[:id]): include: :latest_entries}
+                                            ^
+/Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:24: syntax error, unexpected end-of-input, expecting keyword_end:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4454382140791653443__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70334225208780/variables" for 127.0.0.1 at 2014-11-20 11:56:15 -0800
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2014-11-20 11:56:53 -0800
+
+SyntaxError - /Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected =>, expecting '}'
+    render {:json => Feed.find(params[:id]), include: :latest_entries}
+                    ^
+/Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected ',', expecting '}'
+    render {:json => Feed.find(params[:id]), include: :latest_entries}
+                                            ^:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4454382140791653443__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70334213333760/variables" for 127.0.0.1 at 2014-11-20 11:56:53 -0800
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2014-11-20 11:56:57 -0800
+
+SyntaxError - /Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected =>, expecting '}'
+    render {:json => Feed.find(params[:id]), include: :latest_entries}
+                    ^
+/Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected ',', expecting '}'
+    render {:json => Feed.find(params[:id]), include: :latest_entries}
+                                            ^:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4454382140791653443__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70334206589880/variables" for 127.0.0.1 at 2014-11-20 11:56:57 -0800
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2014-11-20 11:58:27 -0800
+
+SyntaxError - /Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:7: syntax error, unexpected '\n', expecting :: or '[' or '.'
+/Users/appacademy/Desktop/w7d4/news-reader/app/controllers/api/feeds_controller.rb:24: syntax error, unexpected end-of-input, expecting keyword_end:
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:228:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4454382140791653443__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70334215129820/variables" for 127.0.0.1 at 2014-11-20 11:58:28 -0800
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2014-11-20 11:58:38 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"5"}
+Completed 500 Internal Server Error in 1ms
+
+ArgumentError - too few arguments:
+  app/controllers/api/feeds_controller.rb:7:in `show'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:383:in `_run__1381514734448204688__process_action__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.2) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  activerecord (4.0.2) lib/active_record/migration.rb:369:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__4454382140791653443__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70334207608860/variables" for 127.0.0.1 at 2014-11-20 11:58:38 -0800
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2014-11-20 13:16:32 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mSQL (0.9ms)[0m  UPDATE "feeds" SET "updated_at" = '2014-11-20 21:16:32.449044' WHERE "feeds"."id" = 5
+  [1m[36m (0.7ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 5]]
+Completed 200 OK in 297ms (Views: 281.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2014-11-20 13:16:37 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 5]]
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/feeds/5" for 127.0.0.1 at 2014-11-20 13:16:40 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "5"]]
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 5]]
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/feeds/1" for 127.0.0.1 at 2014-11-20 13:16:53 -0800
+Processing by Api::FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSQL (21.2ms)[0m  UPDATE "feeds" SET "updated_at" = '2014-11-20 21:16:53.509153' WHERE "feeds"."id" = 1
+  [1m[36m (0.6ms)[0m  [1mSELECT "entries"."guid" FROM "entries"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518210"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:16:50+00:00\",\"link\":\"http://example.com/test/1416518210\",\"description\":\"Fugiat reprehenderit irure dolore nisi id nulla et quis velit magna aute irure.\",\"pubDate\":\"2014-11-20T13:16:50-08:00\",\"guid\":\"http://example.com/test/1416518210\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518210"], ["published_at", Thu, 20 Nov 2014 21:16:50 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:16:50+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518200"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:16:40+00:00\",\"link\":\"http://example.com/test/1416518200\",\"description\":\"Fugiat do pariatur proident nulla esse esse excepteur amet.\",\"pubDate\":\"2014-11-20T13:16:40-08:00\",\"guid\":\"http://example.com/test/1416518200\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518200"], ["published_at", Thu, 20 Nov 2014 21:16:40 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:16:40+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518190"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:16:30+00:00\",\"link\":\"http://example.com/test/1416518190\",\"description\":\"Aliqua ipsum sunt do veniam id minim.\",\"pubDate\":\"2014-11-20T13:16:30-08:00\",\"guid\":\"http://example.com/test/1416518190\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518190"], ["published_at", Thu, 20 Nov 2014 21:16:30 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:16:30+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518180"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:16:20+00:00\",\"link\":\"http://example.com/test/1416518180\",\"description\":\"Ipsum qui minim laboris magna.\",\"pubDate\":\"2014-11-20T13:16:20-08:00\",\"guid\":\"http://example.com/test/1416518180\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518180"], ["published_at", Thu, 20 Nov 2014 21:16:20 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:16:20+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518170"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:16:10+00:00\",\"link\":\"http://example.com/test/1416518170\",\"description\":\"Dolor anim ea amet enim.\",\"pubDate\":\"2014-11-20T13:16:10-08:00\",\"guid\":\"http://example.com/test/1416518170\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518170"], ["published_at", Thu, 20 Nov 2014 21:16:10 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:16:10+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518160"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:16:00+00:00\",\"link\":\"http://example.com/test/1416518160\",\"description\":\"Sunt sint sit consequat esse exercitation occaecat do labore ipsum.\",\"pubDate\":\"2014-11-20T13:16:00-08:00\",\"guid\":\"http://example.com/test/1416518160\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518160"], ["published_at", Thu, 20 Nov 2014 21:16:00 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:16:00+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518150"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:15:50+00:00\",\"link\":\"http://example.com/test/1416518150\",\"description\":\"Velit laborum irure exercitation do consequat.\",\"pubDate\":\"2014-11-20T13:15:50-08:00\",\"guid\":\"http://example.com/test/1416518150\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518150"], ["published_at", Thu, 20 Nov 2014 21:15:50 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:15:50+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518140"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:15:40+00:00\",\"link\":\"http://example.com/test/1416518140\",\"description\":\"Non amet excepteur est nisi nisi anim.\",\"pubDate\":\"2014-11-20T13:15:40-08:00\",\"guid\":\"http://example.com/test/1416518140\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518140"], ["published_at", Thu, 20 Nov 2014 21:15:40 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:15:40+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518130"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:15:30+00:00\",\"link\":\"http://example.com/test/1416518130\",\"description\":\"Exercitation cillum dolor cupidatat aliqua laborum aute.\",\"pubDate\":\"2014-11-20T13:15:30-08:00\",\"guid\":\"http://example.com/test/1416518130\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518130"], ["published_at", Thu, 20 Nov 2014 21:15:30 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:15:30+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entries" ("created_at", "feed_id", "guid", "json", "link", "published_at", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["created_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00], ["feed_id", 1], ["guid", "http://example.com/test/1416518120"], ["json", "{\"title\":\"Lorem ipsum 2014-11-20T21:15:20+00:00\",\"link\":\"http://example.com/test/1416518120\",\"description\":\"Veniam pariatur elit magna dolore incididunt nulla labore minim et.\",\"pubDate\":\"2014-11-20T13:15:20-08:00\",\"guid\":\"http://example.com/test/1416518120\",\"dc_creator\":\"John Smith\"}"], ["link", "http://example.com/test/1416518120"], ["published_at", Thu, 20 Nov 2014 21:15:20 UTC +00:00], ["title", "Lorem ipsum 2014-11-20T21:15:20+00:00"], ["updated_at", Thu, 20 Nov 2014 21:16:54 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mEntry Load (1.0ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  [["feed_id", 1]]
+Completed 200 OK in 1464ms (Views: 1425.8ms | ActiveRecord: 37.0ms)
