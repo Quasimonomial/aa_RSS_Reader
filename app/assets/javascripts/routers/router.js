@@ -28,6 +28,4 @@ NewsReader.Routers.Router = Backbone.Router.extend({
     
     this.$rootEl.html(showView.render().$el);
   }
-  
-
 })
