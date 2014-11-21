@@ -3,7 +3,6 @@ NewsReader.Views.FeedShow = Backbone.View.extend({
     this.listenTo(this.model, "sync", this.render)
   },
 
-
   template: JST["feedShow"],
 
   render: function () {
